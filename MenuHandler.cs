@@ -4,6 +4,11 @@ namespace PrimeNumbers
 {
     public static class MenuHandler
     {
+        /// <summary>
+        /// Prints a menu with 4 choices.
+        /// It runs until the user enters a number between 1-4.
+        /// </summary>
+        /// <returns>The choice.</returns>
         public static int Menu(){
             bool isNumeric;
             int choice;
@@ -24,6 +29,9 @@ namespace PrimeNumbers
             return choice;
         }
 
+        /// <summary>
+        /// Prints an error message.
+        /// </summary>
         private static void Error(){
             Console.WriteLine("Please enter a valid number.");
             Console.ReadKey();
