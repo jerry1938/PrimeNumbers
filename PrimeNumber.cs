@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PrimeNumbers
 {
@@ -12,8 +13,20 @@ namespace PrimeNumbers
 
             bool isNumeric = int.TryParse(Console.ReadLine(), out int number);
             if (isNumeric){
-                if (IsPrime(number)) Console.WriteLine("True");
-                else Console.WriteLine("False");
+                if (IsPrime(number)) {
+                    Console.Clear();
+                    Console.WriteLine(
+                        "The number you entered is a prime number.");
+                    primeNumbers.Add(number);
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine(
+                        "The number you entered is not a prime number.");
+                    Console.ReadKey();
+                }
             }
             else{
                 // Error
@@ -26,6 +39,28 @@ namespace PrimeNumbers
                 if (number % i == 0) return false;
             }
             return true;
+        }
+
+        public static void GetNextPrime(){
+            Console.Clear();
+            int lastNum;
+            int nextNum = 2; // First and default prime number.
+
+            if (primeNumbers.Count < 1) lastNum = 0;
+            else lastNum = primeNumbers.Max();
+            // Because the lastNum is a prime number we need to start by 
+            // lastNum+1.
+            // There is always a prime number between lastNum+1 and lastNum * 2.
+            for (int i = lastNum + 1; i < lastNum * 2; i++)
+            {
+                if (IsPrime(i)){
+                    nextNum = i;
+                    break;
+                }
+            }
+            Console.WriteLine($"The next prime number is {nextNum}");
+            primeNumbers.Add(nextNum);
+            Console.ReadKey();
         }
     }
 }
