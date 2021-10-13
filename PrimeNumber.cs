@@ -87,12 +87,20 @@ namespace PrimeNumbers
         }
 
         /// <summary>
-        /// Prints the data structure to the screen.
+        /// Prints the data structure to the screen. If there are no prime
+        /// numbers saved in a data structure a message gets printed to the
+        /// screen.
         /// </summary>
         public static void PrintDataStructure(){
-            foreach (var item in primeNumbers)
+            if (primeNumbers.Count == 0) {
+                Console.WriteLine("There are no saved prime numbers.");
+            }
+            else
             {
-                Console.Write($"{item}  ");
+                foreach (var item in primeNumbers)
+                {
+                    Console.Write($"{item}  ");
+                }
             }
             Console.ReadKey();
         }
