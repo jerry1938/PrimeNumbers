@@ -19,6 +19,7 @@ namespace PrimeNumbers
                         "The number you entered is a prime number.");
                     primeNumbers.Add(number);
                     Console.ReadKey();
+                    SortPrimeNumbers();
                 }
                 else
                 {
@@ -61,6 +62,32 @@ namespace PrimeNumbers
             Console.WriteLine($"The next prime number is {nextNum}");
             primeNumbers.Add(nextNum);
             Console.ReadKey();
+        }
+
+        public static void PrintDataStructure(){
+            foreach (var item in primeNumbers)
+            {
+                Console.Write($"{item}  ");
+            }
+            Console.ReadKey();
+        }
+
+        private static void SortPrimeNumbers(){
+            for (int i = 0; i < primeNumbers.Count; i++)
+            {
+                int lowestNum = i; // stores the position of the lowest number.
+                // int numI = primeNumbers[i];
+                for (int j = i + 1; j < primeNumbers.Count; j++)
+                {
+                    // int numJ = primeNumbers[j];
+                    if (primeNumbers[j] < primeNumbers[lowestNum]){
+                        lowestNum = j;
+                    }
+                }
+                int temp = primeNumbers[i];
+                primeNumbers[i] = primeNumbers[lowestNum];
+                primeNumbers[lowestNum] = temp;
+            }
         }
     }
 }
