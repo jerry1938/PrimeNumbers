@@ -137,7 +137,8 @@ namespace PrimeNumbers
         private static void Error(){
             Console.Clear();
             Console.WriteLine(
-                "Wrong type of input, requires a number, please try again.");
+                "Wrong type of input or the number is to big, please try again."
+            );
             Console.ReadKey();
         }
     }
