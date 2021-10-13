@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace PrimeNumbers
 {
-    public class PrimeNumber
+    public static class PrimeNumber
     {
-        public static List<int> primeNumbers = new();
+        private static readonly List<int> primeNumbers = new();
 
         /// <summary>
         /// The user can enter a number and if the number is a prime number then
