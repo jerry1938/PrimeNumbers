@@ -113,10 +113,10 @@ namespace PrimeNumbers
             for (int i = 0; i < primeNumbers.Count; i++)
             {
                 int lowestNum = i; // stores the position of the lowest number.
-                // int numI = primeNumbers[i];
                 for (int j = i + 1; j < primeNumbers.Count; j++)
                 {
-                    // int numJ = primeNumbers[j];
+                    // Checks if the number is lower than the current lowest 
+                    // number.
                     if (primeNumbers[j] < primeNumbers[lowestNum]){
                         lowestNum = j; // Updates the current lowest num.
                     }
