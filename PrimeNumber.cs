@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PrimeNumbers
 {
@@ -70,7 +69,7 @@ namespace PrimeNumbers
             int nextNum = 2; // First and default prime number.
 
             if (primeNumbers.Count < 1) lastNum = 0;
-            else lastNum = primeNumbers.Max();
+            else lastNum = primeNumbers[^1];
             // Because the lastNum is a prime number we need to start by 
             // lastNum+1.
             // There is always a prime number between lastNum+1 and lastNum * 2.
