@@ -37,7 +37,7 @@ namespace PrimeNumbers
                 }
             }
             else{
-                // Error
+                Error();
             }
         }
 
@@ -121,6 +121,16 @@ namespace PrimeNumbers
                 // data structure with the temp value.
                 primeNumbers[lowestNum] = temp;
             }
+        }
+
+        /// <summary>
+        /// Clears the screen and prints a error message.
+        /// </summary>
+        private static void Error(){
+            Console.Clear();
+            Console.WriteLine(
+                "Wrong type of input, requires a number, please try again.");
+            Console.ReadKey();
         }
     }
 }
